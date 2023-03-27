@@ -1,0 +1,11 @@
+h1 {
+    color: red;
+}
+
+footer {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
