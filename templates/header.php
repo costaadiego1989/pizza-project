@@ -14,10 +14,14 @@
 <header>
     <nav class="navbar navbar-expand-lg">
         <a href="#" class="navbar-brand">
-            <img src="img/logo.svg" alt="Logo de uma fatia de pizza escorrendo queijo.">
+            <img src="img/logo.svg" alt="Logo de uma fatia de pizza escorrendo queijo." id="brand-logo">
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
-
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a href="index.php" class="nav-link">Peça sua Pizza</a>
+                </li>
+            </ul>
         </div>
     </nav>
 </header>
