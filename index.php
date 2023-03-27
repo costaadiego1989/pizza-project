@@ -1,6 +1,6 @@
-<?php 
-    include_once("templates/header.php");
-    include_once("process/pizzas.php");
+<?php
+include_once("templates/header.php");
+include_once("process/pizzas.php");
 ?>
 <div id="main-banner">
     <h1>Faça Seu Pedido</h1>
@@ -16,17 +16,26 @@
                         <label for="borda" class="mb-2">Borda:</label>
                         <select name="borda" id="borda" class="form-control">
                             <option value="">Selecione uma borda</option>
+                            <?php foreach ($bordas as $borda) : ?>
+                                <option value="<?= $borda['id'] ?>"><?= $borda['nome'] ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-group mb-4">
                         <label for="massa" class="mb-2">Massa:</label>
                         <select name="massa" id="massa" class="form-control">
                             <option value="">Selecione uma massa</option>
+                            <?php foreach ($massas as $massa) : ?>
+                                <option value="<?= $massa['id'] ?>"><?= $massa['nome'] ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-group mb-4">
                         <label for="sabores" class="mb-2">Sabores: (Máximo 3)</label>
                         <select multiple name="sabores[]" id="sabores" class="form-control">
+                            <?php foreach ($sabores as $sabor) : ?>
+                                <option value="<?= $sabor['id'] ?>"><?= $sabor['nome'] ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-group">
