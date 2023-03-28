@@ -1,6 +1,6 @@
 <?php
 include_once("templates/header.php");
-include_once("process/pizzas.php");
+include_once("process/orders.php");
 ?>
 
 <div id="main-container">
@@ -17,15 +17,18 @@ include_once("process/pizzas.php");
                                 <th scope="col">Massa</th>
                                 <th scope="col">Sabores</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Ações</th>
+                                <th scope="col">Atualizar</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td scope="row">#1</td>
-                                <td scope="row">Cheedar</td>
-                                <td scope="row">Integral</td>
-                                <td scope="row">Frango com Catupiry</td>
+                            <?php foreach ($pizzas as $pizza): ?>
+                                <tr>
+                                <td scope="row">#<?= $pizza["id"] ?></td>
+                                <td scope="row"><?= $pizza["borda"] ?></td>
+                                <td scope="row"><?= $pizza["massa"] ?></td>
+                                <?php foreach($pizza["sabores"] as $sabor): ?>
+                                    <td scope="row"><?= $sabor ?></td>
+                                <?php endforeach; ?>
                                 <td scope="row">Em produção</td>
                                 <td scope="row">
                                     <form action="process/orders.php" method="POST" class="form-group update-form">
@@ -49,6 +52,7 @@ include_once("process/pizzas.php");
                                     </form>
                                 </td>
                             </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
