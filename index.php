@@ -11,28 +11,28 @@ include_once("process/pizzas.php");
         <div class="row">
             <div class="col-md-12">
                 <h2>Monte sua Pizza como desejar:</h2>
-                <form action="process/pizza.php" method="POST" id="pizza-form">
+                <form action="process/pizzas.php" method="POST" id="pizza-form">
                     <div class="form-group mb-4">
                         <label for="borda" class="mb-2">Borda:</label>
-                        <select name="borda" id="borda" class="form-control">
+                        <select name="borda" id="borda" class="form-control" required>
                             <option value="">Selecione uma borda</option>
                             <?php foreach ($bordas as $borda) : ?>
-                                <option value="<?= $borda['id'] ?>"><?= $borda['nome'] ?></option>
+                                <option value="<?= $borda['id'] ?>"><?= $borda['tipo'] ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-group mb-4">
                         <label for="massa" class="mb-2">Massa:</label>
-                        <select name="massa" id="massa" class="form-control">
+                        <select name="massa" id="massa" class="form-control" required>
                             <option value="">Selecione uma massa</option>
                             <?php foreach ($massas as $massa) : ?>
-                                <option value="<?= $massa['id'] ?>"><?= $massa['nome'] ?></option>
+                                <option value="<?= $massa['id'] ?>"><?= $massa['tipo'] ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-group mb-4">
                         <label for="sabores" class="mb-2">Sabores: (Máximo 3)</label>
-                        <select multiple name="sabores[]" id="sabores" class="form-control">
+                        <select multiple name="sabores[]" id="sabores" class="form-control" required>
                             <?php foreach ($sabores as $sabor) : ?>
                                 <option value="<?= $sabor['id'] ?>"><?= $sabor['nome'] ?></option>
                             <?php endforeach; ?>
